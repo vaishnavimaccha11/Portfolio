@@ -1,6 +1,5 @@
 import {
   BrainCircuit,
-  Cloud,
   Code2,
   Database,
   Layout,
@@ -8,8 +7,9 @@ import {
   Wrench,
 } from 'lucide-react'
 
-import './Skills.css'
 import Reveal from '../../components/Reveal'
+
+import './Skills.css'
 
 const skillGroups = [
   {
@@ -20,7 +20,7 @@ const skillGroups = [
       'Python',
       'JavaScript',
       'TypeScript',
-      'Java',
+      'java',
       'SQL',
       'C++',
     ],
@@ -34,9 +34,8 @@ const skillGroups = [
       'Next.js',
       'HTML5',
       'CSS3',
-      'Tailwind CSS',
-      'Redux',
       'Responsive Design',
+      'Vite',
     ],
   },
   {
@@ -47,11 +46,7 @@ const skillGroups = [
       'Node.js',
       'Express.js',
       'REST APIs',
-      'GraphQL',
-      'JWT',
-      'RBAC',
-      'WebSockets',
-      'Microservices',
+      'JWT Authentication',
     ],
   },
   {
@@ -61,10 +56,8 @@ const skillGroups = [
     skills: [
       'PostgreSQL',
       'MongoDB',
-      'Redis',
-      'PGVector',
       'SQL',
-      'Data Pipelines',
+      'Database Design',
     ],
   },
   {
@@ -73,44 +66,29 @@ const skillGroups = [
     accent: 'purple',
     skills: [
       'OpenAI GPT-4o',
-      'LangChain',
-      'RAG Pipelines',
-      'Prompt Engineering',
       'TensorFlow',
       'Keras',
-      'PyTorch',
+      'OpenCV',
       'Scikit-learn',
+      'NumPy',
+      'Matplotlib',
+      'Convolutional Neural Networks',
       'SMOTE',
-    ],
-  },
-  {
-    title: 'Cloud & DevOps',
-    icon: Cloud,
-    accent: 'cyan',
-    skills: [
-      'AWS',
-      'Azure',
-      'Docker',
-      'GitHub Actions',
-      'CI/CD',
-      'AWS ECS',
-      'AWS S3',
-      'AWS RDS',
+      'Image Classification',
     ],
   },
   {
     title: 'Tools & Practices',
     icon: Wrench,
-    accent: 'blue',
+    accent: 'cyan',
     skills: [
       'Git',
       'GitHub',
       'Postman',
       'VS Code',
-      'Cursor',
-      'GitHub Copilot',
-      'Agile',
-      'Scrum',
+      'Google Colab',
+      'Jupyter Notebook',
+      'Vercel',
       'Clean Code',
     ],
   },
@@ -124,73 +102,71 @@ function Skills() {
       aria-labelledby="skills-heading"
     >
       <div className="page-shell skills-container">
-      <Reveal direction="up">
-        <header className="skills-header">
-          <h2
-            id="skills-heading"
-            className="skills-heading"
-          >
-            Skills
-          </h2>
+        <Reveal direction="up">
+          <header className="skills-header">
+            <h2
+              id="skills-heading"
+              className="skills-heading"
+            >
+              Skills
+            </h2>
 
-          <div
-            className="skills-heading-divider"
-            aria-hidden="true"
-          />
+            <div
+              className="skills-heading-divider"
+              aria-hidden="true"
+            />
 
-          <p className="skills-introduction">
-            A collection of technologies I use to build modern web
-            applications, AI-powered software, and scalable backend
-            systems.
-          </p>
-        </header>
-      </Reveal>
+            <p className="skills-introduction">
+              Technologies and tools I have applied while
+              building full-stack applications, developing
+              REST APIs, and creating deep-learning solutions.
+            </p>
+          </header>
+        </Reveal>
 
         <div className="skills-grid">
           {skillGroups.map((group, index) => {
             const Icon = group.icon
 
             return (
-            <Reveal
-
+              <Reveal
                 key={group.title}
-
                 direction="up"
-
                 delay={(index % 2) * 90}
-            >
-              <article
-                key={group.title}
-                className={`skill-card skill-card-${group.accent}`}
               >
-                <div className="skill-card-header">
-                  <div className="skill-card-icon">
-                    <Icon
-                      size={25}
-                      strokeWidth={1.8}
-                      aria-hidden="true"
-                    />
+                <article
+                  className={`skill-card skill-card-${group.accent}`}
+                >
+                  <div className="skill-card-header">
+                    <div className="skill-card-icon">
+                      <Icon
+                        size={25}
+                        strokeWidth={1.8}
+                        aria-hidden="true"
+                      />
+                    </div>
+
+                    <div className="skill-card-title-area">
+                      <h3>{group.title}</h3>
+
+                      <span className="skill-count">
+                        {group.skills.length}{' '}
+                        {group.skills.length === 1
+                          ? 'Technology'
+                          : 'Technologies'}
+                      </span>
+                    </div>
                   </div>
 
-                  <div className="skill-card-title-area">
-                    <h3>{group.title}</h3>
-
-                    <span className="skill-count">
-                      {group.skills.length}{' '}
-                      {group.skills.length === 1
-                        ? 'Technology'
-                        : 'Technologies'}
-                    </span>
+                  <div className="skill-list">
+                    {group.skills.map((skill) => (
+                      <span key={skill}>
+                        {skill}
+                      </span>
+                    ))}
                   </div>
-                </div>
-
-                <div className="skill-list">
-                  {group.skills.map((skill) => (
-                    <span key={skill}>{skill}</span>
-                  ))}
-                </div>
-              </article>
-            </Reveal>
+                </article>
+              </Reveal>
             )
           })}
         </div>
