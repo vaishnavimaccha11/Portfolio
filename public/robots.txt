@@ -1,0 +1,5 @@
+User-agent: *
+
+Allow: /
+
+Sitemap: https://vaishnavi-portfolio-three-iota.vercel.app/sitemap.xml
