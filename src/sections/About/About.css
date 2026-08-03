@@ -1,0 +1,372 @@
+/* =========================================
+   ABOUT SECTION
+========================================= */
+
+.about-section {
+  position: relative;
+  z-index: 1;
+
+  padding:
+    88px
+    20px
+    96px;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 50% 10%,
+      rgba(59, 130, 246, 0.045),
+      transparent 34%
+    ),
+    #050914;
+}
+
+/*
+  Very subtle ambient glow.
+  This is intentionally much calmer than the Hero.
+*/
+
+.about-section::before {
+  content: "";
+
+  position: absolute;
+  top: 20%;
+  left: 50%;
+
+  width: min(760px, 90vw);
+  height: 420px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      ellipse,
+      rgba(37, 99, 235, 0.045),
+      rgba(139, 92, 246, 0.025) 45%,
+      transparent 72%
+    );
+
+  filter: blur(60px);
+  transform: translateX(-50%);
+
+  pointer-events: none;
+}
+
+.about-container {
+  position: relative;
+  z-index: 1;
+
+  max-width: 940px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* =========================================
+   ABOUT HEADING
+========================================= */
+
+.about-header {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+}
+
+.about-heading {
+  margin: 0;
+
+  color: #f8fafc;
+
+  font-size:
+    clamp(
+      3.8rem,
+      8vw,
+      6.8rem
+    );
+
+  font-weight: 780;
+  line-height: 1;
+
+  letter-spacing: -0.03em;
+  word-spacing: 0.1em;
+
+  text-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.34),
+    0 0 30px rgba(125, 211, 252, 0.04);
+}
+
+.about-heading-divider {
+  width: 124px;
+  height: 3px;
+
+  margin-top: 26px;
+
+  border-radius: 999px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #22d3ee,
+      #60a5fa,
+      #c084fc
+    );
+
+  box-shadow:
+    0 0 16px rgba(96, 165, 250, 0.24);
+}
+
+/* =========================================
+   ABOUT COPY
+========================================= */
+
+.about-copy {
+  width: 100%;
+  max-width: 890px;
+
+  margin-top: 44px;
+}
+
+.about-copy p {
+  margin: 0;
+
+  color:
+    rgba(226, 232, 240, 0.78);
+
+  font-size:
+    clamp(
+      1rem,
+      1.45vw,
+      1.09rem
+    );
+
+  font-weight: 400;
+  line-height: 1.82;
+
+  letter-spacing: -0.01em;
+}
+
+.about-copy p + p {
+  margin-top: 25px;
+}
+
+/* =========================================
+   ROLE PILLS
+========================================= */
+
+.about-roles {
+  width: 100%;
+
+  margin-top: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  gap: 18px;
+}
+
+.about-role-pill {
+  min-width: 250px;
+  min-height: 56px;
+
+  padding:
+    13px
+    25px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  border:
+    1px
+    solid
+    rgba(34, 211, 238, 0.48);
+
+  border-radius: 999px;
+
+  color:
+    rgba(248, 250, 252, 0.92);
+
+  background:
+    linear-gradient(
+      110deg,
+      rgba(34, 211, 238, 0.055),
+      rgba(96, 165, 250, 0.035),
+      rgba(192, 132, 252, 0.055)
+    );
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.035),
+    0 12px 30px rgba(0, 0, 0, 0.14);
+
+  font-size: 1rem;
+  font-weight: 550;
+
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.about-role-pill svg {
+  flex-shrink: 0;
+
+  color: #22d3ee;
+
+  filter:
+    drop-shadow(
+      0 0 7px rgba(34, 211, 238, 0.4)
+    );
+}
+
+.about-role-pill-ai {
+  border-color:
+    rgba(192, 132, 252, 0.5);
+}
+
+.about-role-pill-ai svg {
+  color: #c084fc;
+
+  filter:
+    drop-shadow(
+      0 0 7px rgba(192, 132, 252, 0.42)
+    );
+}
+
+.about-role-pill:hover {
+  transform: translateY(-3px);
+
+  border-color:
+    rgba(125, 211, 252, 0.75);
+
+  background:
+    linear-gradient(
+      110deg,
+      rgba(34, 211, 238, 0.1),
+      rgba(96, 165, 250, 0.065),
+      rgba(192, 132, 252, 0.09)
+    );
+
+  box-shadow:
+    0 15px 34px rgba(0, 0, 0, 0.22),
+    0 0 24px rgba(96, 165, 250, 0.09);
+}
+
+.about-role-pill-ai:hover {
+  border-color:
+    rgba(192, 132, 252, 0.76);
+
+  box-shadow:
+    0 15px 34px rgba(0, 0, 0, 0.22),
+    0 0 24px rgba(192, 132, 252, 0.1);
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 768px) {
+  .about-section {
+    padding:
+      78px
+      18px
+      84px;
+  }
+
+  .about-copy {
+    margin-top: 40px;
+  }
+
+  .about-copy p {
+    line-height: 1.75;
+  }
+
+  .about-roles {
+    margin-top: 38px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 560px) {
+  .about-section {
+    padding:
+      68px
+      16px
+      74px;
+  }
+
+  .about-heading {
+    font-size:
+      clamp(
+        3.4rem,
+        17vw,
+        5rem
+      );
+
+    letter-spacing: -0.025em;
+    word-spacing: 0.09em;
+    line-height: 1;
+  }
+
+  .about-heading-divider {
+    width: 100px;
+
+    margin-top: 21px;
+  }
+
+  .about-copy {
+    margin-top: 34px;
+  }
+
+  .about-copy p {
+    font-size: 0.97rem;
+    line-height: 1.72;
+  }
+
+  .about-copy p + p {
+    margin-top: 21px;
+  }
+
+  .about-roles {
+    margin-top: 34px;
+
+    flex-direction: column;
+
+    gap: 13px;
+  }
+
+  .about-role-pill {
+    width: 100%;
+    min-width: 0;
+    max-width: 330px;
+
+    min-height: 53px;
+
+    padding:
+      12px
+      18px;
+  }
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .about-role-pill {
+    transition: none;
+  }
+}
