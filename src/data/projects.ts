@@ -97,8 +97,8 @@ export const projects: Project[] = [
       'Monaco Editor',
     ],
 
-    githubUrl: 'https://github.com/vaishnavimaccha/devassist-ai',
-    liveUrl: 'https://devassist-ai.vercel.app',
+    githubUrl: 'https://github.com/vaishnavimaccha11/DevAssist-AI',
+    liveUrl: 'https://dev-assist-ai-peach.vercel.app',
   },
 
   {
@@ -178,6 +178,6 @@ export const projects: Project[] = [
       },
     ],
 
-    githubUrl:"https://github.com/vaishnavimaccha11/Deep-Learning-with-SMOTE-for-Improved-Skin-Lesion-Classification",
+    githubUrl:'https://github.com/vaishnavimaccha11/Deep-Learning-with-SMOTE-for-Improved-Skin-Lesion-Classification',
   },
 ]

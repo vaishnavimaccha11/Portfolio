@@ -22,7 +22,7 @@ export default function Footer() {
         <div className="footer-right">
 
           <a
-            href="https://github.com/vaishnavimaccha"
+            href='https://github.com/vaishnavimaccha11'
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub"

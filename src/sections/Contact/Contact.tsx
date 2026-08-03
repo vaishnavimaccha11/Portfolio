@@ -25,10 +25,8 @@ const contactDetails = {
   phoneDisplay: '+91 70320 42314',
   phoneLink: '+917032042314',
   location: 'Hyderabad, Telangana, India',
-  linkedinUrl:
-    'https://www.linkedin.com/in/vaishnavimaccha',
-  githubUrl:
-    'https://github.com/vaishnavimaccha',
+  linkedinUrl:'https://www.linkedin.com/in/vaishnavimaccha',
+  githubUrl:'https://github.com/vaishnavimaccha11',
 }
 
 type FormStatus =
