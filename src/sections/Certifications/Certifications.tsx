@@ -120,9 +120,6 @@ function Certifications() {
       <div className="page-shell certifications-container">
         <Reveal direction="up">
           <header className="certifications-header">
-            <p className="certifications-eyebrow">
-              Verified credentials
-            </p>
 
             <h2
               id="certifications-heading"
