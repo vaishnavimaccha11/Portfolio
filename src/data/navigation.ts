@@ -33,14 +33,14 @@ export const navigationItems: NavigationItem[] = [
     icon: BriefcaseBusiness,
   },
   {
-    label: 'Skills',
-    href: '#skills',
-    icon: Code2,
-  },
-  {
     label: 'Certifications',
     href: '#certifications',
     icon: Award,
+  },
+  {
+    label: 'Skills',
+    href: '#skills',
+    icon: Code2,
   },
   {
     label: 'Contact',
