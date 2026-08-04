@@ -2,7 +2,6 @@ import {
   Award,
   BriefcaseBusiness,
   Code2,
-  FileText,
   House,
   Mail,
   UserRound,
@@ -48,9 +47,3 @@ export const navigationItems: NavigationItem[] = [
     icon: Mail,
   },
 ]
-
-export const resumeNavigationItem: NavigationItem = {
-  label: 'Resume',
-  href: '#resume',
-  icon: FileText,
-}

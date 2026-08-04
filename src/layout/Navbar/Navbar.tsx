@@ -1,15 +1,11 @@
 import { useEffect, useState } from 'react'
 
-import {
-  navigationItems,
-  resumeNavigationItem,
-} from '../../data/navigation'
+import { navigationItems } from '../../data/navigation'
 
 function Navbar() {
   const [activeSection, setActiveSection] =
     useState('home')
 
-  const ResumeIcon = resumeNavigationItem.icon
 
   useEffect(() => {
     const sectionElements = navigationItems
@@ -113,28 +109,6 @@ function Navbar() {
             )
           },
         )}
-
-        <span
-          className="navbar-icon-divider"
-          aria-hidden="true"
-        />
-
-        <a
-          href={
-            resumeNavigationItem.href
-          }
-          className="navbar-icon-link navbar-resume-icon"
-          aria-label="Resume"
-          data-tooltip="Resume"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <ResumeIcon
-            size={20}
-            strokeWidth={1.8}
-            aria-hidden="true"
-          />
-        </a>
       </nav>
     </header>
   )
