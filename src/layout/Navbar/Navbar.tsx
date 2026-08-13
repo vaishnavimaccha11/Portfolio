@@ -6,63 +6,70 @@ function Navbar() {
   const [activeSection, setActiveSection] =
     useState('home')
 
-
   useEffect(() => {
-    const sectionElements = navigationItems
-      .map((item) =>
-        item.href.replace('#', ''),
-      )
-      .map((id) =>
-        document.getElementById(id),
-      )
-      .filter(
-        (
-          section,
-        ): section is HTMLElement =>
-          section !== null,
-      )
+    function updateActiveSection() {
+      const sections = navigationItems
+        .map((item) => {
+          const id = item.href.replace('#', '')
+          const element =
+            document.getElementById(id)
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visibleSection = entries
-          .filter(
-            (entry) =>
-              entry.isIntersecting,
-          )
-          .sort(
-            (
-              firstEntry,
-              secondEntry,
-            ) =>
-              secondEntry.intersectionRatio -
-              firstEntry.intersectionRatio,
-          )[0]
+          return {
+            id,
+            element,
+          }
+        })
+        .filter(
+          (
+            section,
+          ): section is {
+            id: string
+            element: HTMLElement
+          } => section.element !== null,
+        )
 
-        if (visibleSection) {
-          setActiveSection(
-            visibleSection.target.id,
-          )
+      const activationPoint =
+        window.innerHeight * 0.35
+
+      let currentSection = sections[0]?.id ?? 'home'
+
+      sections.forEach(({ id, element }) => {
+        const rect =
+          element.getBoundingClientRect()
+
+        if (rect.top <= activationPoint) {
+          currentSection = id
         }
-      },
+      })
+
+      setActiveSection(currentSection)
+    }
+
+    updateActiveSection()
+
+    window.addEventListener(
+      'scroll',
+      updateActiveSection,
       {
-        rootMargin:
-          '-35% 0px -55% 0px',
-        threshold: [
-          0.05,
-          0.2,
-          0.5,
-        ],
+        passive: true,
       },
     )
 
-    sectionElements.forEach(
-      (section) => {
-        observer.observe(section)
-      },
+    window.addEventListener(
+      'resize',
+      updateActiveSection,
     )
 
     return () => {
-      observer.disconnect()
+      window.removeEventListener(
+        'scroll',
+        updateActiveSection,
+      )
+
+      window.removeEventListener(
+        'resize',
+        updateActiveSection,
+      )
     }
   }, [])
 
