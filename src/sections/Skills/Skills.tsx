@@ -5,6 +5,7 @@ import {
   Layout,
   Server,
   Wrench,
+  Blocks,
 } from 'lucide-react'
 
 import Reveal from '../../components/Reveal'
@@ -20,11 +21,11 @@ const skillGroups = [
       'Python',
       'JavaScript',
       'TypeScript',
-      'java',
-      'SQL',
+      'Java',
       'C++',
     ],
   },
+
   {
     title: 'Frontend Development',
     icon: Layout,
@@ -32,12 +33,13 @@ const skillGroups = [
     skills: [
       'React.js',
       'Next.js',
+      'Tailwind CSS',
       'HTML5',
       'CSS3',
       'Responsive Design',
-      'Vite',
     ],
   },
+
   {
     title: 'Backend & APIs',
     icon: Server,
@@ -49,47 +51,62 @@ const skillGroups = [
       'JWT Authentication',
     ],
   },
+
   {
-    title: 'Databases & Data',
+    title: 'Data & Databases',
     icon: Database,
     accent: 'orange',
     skills: [
       'PostgreSQL',
       'MongoDB',
       'SQL',
-      'Database Design',
+      'Vector Databases',
+      'PG Vector',
     ],
   },
+
   {
     title: 'AI & Machine Learning',
     icon: BrainCircuit,
     accent: 'purple',
     skills: [
       'OpenAI GPT-4o',
+      'Anthropic Claude',
+      'LangChain',
+      'RAG Pipelines',
+      'Retrieval Systems',
+      'Agentic Workflows',
+      'AI APIs',
+      'Prompt Engineering',
       'TensorFlow',
-      'Keras',
-      'OpenCV',
-      'Scikit-learn',
-      'NumPy',
-      'Matplotlib',
-      'Convolutional Neural Networks',
-      'SMOTE',
-      'Image Classification',
+      'PyTorch',
     ],
   },
+
   {
-    title: 'Tools & Practices',
+    title: 'Developer Tools',
     icon: Wrench,
     accent: 'cyan',
     skills: [
       'Git',
       'GitHub',
-      'Postman',
       'VS Code',
-      'Google Colab',
-      'Jupyter Notebook',
+      'Postman',
       'Vercel',
-      'Clean Code',
+      'Render',
+      'Claude Code',
+    ],
+  },
+
+  {
+    title: 'Other Technologies',
+    icon: Blocks,
+    accent: 'blue',
+    skills: [
+      'Automation',
+      'Blockchain Fundamentals',
+      'High-Level System Design',
+      'Computer Networks',
     ],
   },
 ]
@@ -102,8 +119,10 @@ function Skills() {
       aria-labelledby="skills-heading"
     >
       <div className="page-shell skills-container">
+
         <Reveal direction="up">
           <header className="skills-header">
+
             <h2
               id="skills-heading"
               className="skills-heading"
@@ -117,14 +136,17 @@ function Skills() {
             />
 
             <p className="skills-introduction">
-              Technologies and tools I have applied while
-              building full-stack applications, developing
-              REST APIs, and creating deep-learning solutions.
+              Technologies and tools I have learned and
+              applied across full-stack development,
+              artificial intelligence, machine learning,
+              blockchain and software engineering.
             </p>
+
           </header>
         </Reveal>
 
         <div className="skills-grid">
+
           {skillGroups.map((group, index) => {
             const Icon = group.icon
 
@@ -137,7 +159,9 @@ function Skills() {
                 <article
                   className={`skill-card skill-card-${group.accent}`}
                 >
+
                   <div className="skill-card-header">
+
                     <div className="skill-card-icon">
                       <Icon
                         size={25}
@@ -147,6 +171,7 @@ function Skills() {
                     </div>
 
                     <div className="skill-card-title-area">
+
                       <h3>{group.title}</h3>
 
                       <span className="skill-count">
@@ -155,20 +180,25 @@ function Skills() {
                           ? 'Technology'
                           : 'Technologies'}
                       </span>
+
                     </div>
                   </div>
 
                   <div className="skill-list">
+
                     {group.skills.map((skill) => (
                       <span key={skill}>
                         {skill}
                       </span>
                     ))}
+
                   </div>
+
                 </article>
               </Reveal>
             )
           })}
+
         </div>
       </div>
     </section>
